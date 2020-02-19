@@ -142,7 +142,8 @@ select {
 /* media queries which will only be activated at specific screen sizes */
 @media (max-width: 800px) {
   #table-area thead {
-    font-size: 1.25em;
+    font-size: 1.5em;
+    color: #DAA520;
     text-align: center;
   }
   #table-area td {
@@ -157,11 +158,12 @@ select {
 @media (max-width: 500px) {
   #table-area thead {
     font-size: 1.5em;
+    color: #DAA520;
     text-align: center;
   }
   
   #table-area tr td:first-child {
-    font-size: 1.25em;
+    font-size: 1.1em;
     text-align: center;
   }
 
