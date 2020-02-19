@@ -149,6 +149,9 @@ select {
     font-size: 1em;
     text-align: center;
   }
+  .hero h1 {
+    animation: smaller-title 1.2s forwards linear;
+  }
 }
 
 @media (max-width: 500px) {
