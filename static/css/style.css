@@ -141,6 +141,10 @@ select {
 
 /* media queries which will only be activated at specific screen sizes */
 @media (max-width: 800px) {
+  #table-area thead {
+    font-size: 1.25em;
+    text-align: center;
+  }
   #table-area td {
     font-size: 1em;
     text-align: center;
@@ -148,31 +152,14 @@ select {
 }
 
 @media (max-width: 500px) {
-  #table-area td {
-    display: none;
+  #table-area thead {
+    font-size: 1.5em;
     text-align: center;
   }
-
+  
   #table-area tr td:first-child {
-    font-size: 1em;
-    font-weight: bold;
-    background: #1b3146;
+    font-size: 1.25em;
     text-align: center;
-  }
-
-  #table-area tr td:last-child {
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
-  #table-area tr td:last-child::after {
-    display: block;
-    text-align: center;
-    width: 100%;
-    height: 1px;
-    margin-top: 20px;
-    content: " ";
-    background: aliceblue;
   }
 
   #table-area td {
@@ -180,23 +167,6 @@ select {
     text-align: center;
   }
 
-  #table-area tbody td {
-    display: block;
-    text-align: center;
-  }
-
-  #table-area tbody td::before {
-    display: block;
-    font-size: 1.4em;
-    font-weight: bold;
-    text-align: center;
-    content: attr(data-th);
-  }
-
-  .hero h1 {
-    animation: smaller-title 1.2s forwards linear;
-  }
-}
 
 /* keyframe animations which will be used to animate the title */
 @keyframes title {
