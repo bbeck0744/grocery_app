@@ -1,9 +1,11 @@
 var meals = meals;
 var data = data;
-var tbody = d3.select("tbody");
+var tbody = d3.select("#tbody");
+var tbody2 = d3.select("#tbody2");
 var button = d3.select("#createlist-btn");
 button.on("click", function() {
     tbody.html("")
+    tbody2.html("")
     var arr = [];
         while(arr.length < 5){
             var r = Math.floor(Math.random() * 20) + 1;
@@ -16,19 +18,23 @@ button.on("click", function() {
         
         meal_list = result.map(obj => obj.Meal)
         console.log(meal_list);
-
+        
         combined_list = data.filter(obj => meal_list.includes(obj.Meal))
         console.log(combined_list);
 
-        combined_list.forEach(function(filteredTableData) {
-            console.log(filteredTableData);
-            var row = tbody.append("tr");
-            Object.entries(filteredTableData).forEach(function([key, value]) {
-              console.log(key, value);
-              // Append a cell to the row for each value
-              var cell = row.append("td");
-              cell.text(value);
-            });
-          }); 
-        
+        distinct_items = [...new Set(combined_list.map(x => x.Item))];
+
+        meal_list.forEach(function(weekly_meals) {
+          var row = tbody.append("tr");
+          console.log(weekly_meals);
+          var cell = row.append("td");
+          cell.text(weekly_meals);
         });
+
+        distinct_items.forEach(function(filtered_grocery) {
+          var row = tbody2.append("tr");
+          console.log(filtered_grocery);
+          var cell = row.append("td");
+          cell.text(filtered_grocery);
+          });
+});
